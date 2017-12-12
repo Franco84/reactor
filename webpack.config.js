@@ -3,7 +3,7 @@ var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const VENDOR_LIBS = [
-  'react', 'react-dom', 'react-router', 'lodash'
+  'react', 'react-dom', 'react-router', 'lodash', 'axios'
 ];
 
 module.exports = {
@@ -37,6 +37,9 @@ module.exports = {
         ]
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [
     new webpack.DefinePlugin({
